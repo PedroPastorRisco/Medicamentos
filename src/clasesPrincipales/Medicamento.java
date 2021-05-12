@@ -3,15 +3,17 @@ package clasesPrincipales;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import enumerados.Presentacion;
+
 public class Medicamento extends Producto implements Serializable {
 	
-	private char presentacion;
+	private Presentacion presentacion;
 	private String principioActivo;
 	
 	
 	
 
-	public Medicamento(String codigoBarras, String nombre, LocalDate fechaCaducidad, double precio,char presentacion,String principioActivo) {
+	public Medicamento(String codigoBarras, String nombre, LocalDate fechaCaducidad, double precio,Presentacion presentacion,String principioActivo) {
 		super(codigoBarras, nombre, fechaCaducidad, precio);
 		this.presentacion=presentacion;
 		this.principioActivo=principioActivo;

@@ -39,15 +39,8 @@ public abstract class Producto implements Comparable <Producto>, Serializable {
 	
 	@Override
 	public int compareTo(Producto o) {
-		int resultado=-1;
-		if(equals(o)) {
-			resultado=0;
-		}else {
-			if(o.getCodigoBarras().compareTo(getCodigoBarras())==1) {
-				resultado=1;
-			}
-		}
-		return resultado;
+		
+		return o.getCodigoBarras().compareTo(getCodigoBarras());
 	}
 	
 
