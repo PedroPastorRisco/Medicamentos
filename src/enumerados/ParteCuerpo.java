@@ -1,6 +1,8 @@
 package enumerados;
 
-public enum ParteCuerpo {CARA('C'),MANOS('M'),OJOS('O');
+import java.io.Serializable;
+
+public enum ParteCuerpo implements Serializable {CARA('C'),MANOS('M'),OJOS('O');
 	
 	private char abreviacion;
 	

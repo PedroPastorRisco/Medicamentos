@@ -35,9 +35,10 @@ public class FileAccess {
 	public static List<Producto> leerFichero(String nombreFichero) {
 		ObjectInputStream ficheroEntrada=null;
 		List<Producto> productos=new ArrayList<>();
+		Object objeto;
 		try {
 			 ficheroEntrada = new ObjectInputStream(new FileInputStream(nombreFichero));
-			 Object objeto=new Object();
+			  objeto=new Object();
 	         while (objeto != null) {
 	        	 try {
 	               objeto=ficheroEntrada.readObject();

@@ -1,6 +1,8 @@
 package enumerados;
 
-public enum Material { PLASTICO,TELA,SILICONA
+import java.io.Serializable;
+
+public enum Material implements Serializable { PLASTICO,TELA,SILICONA
 	
 	
 }

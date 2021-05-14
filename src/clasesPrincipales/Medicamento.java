@@ -18,6 +18,19 @@ public class Medicamento extends Producto implements Serializable {
 		this.presentacion=presentacion;
 		this.principioActivo=principioActivo;
 	}
+	
+
+
+	public Presentacion getPresentacion() {
+		return presentacion;
+	}
+
+
+
+	public String getPrincipioActivo() {
+		return principioActivo;
+	}
+
 
 
 	@Override
