@@ -65,10 +65,12 @@ private static Scanner teclado = new Scanner(System.in);
     	return nombre;
 	}
 	/**
+     * Cabecera: public static Material obtenerMaterial() <br>
+     * Comentario: Este metodo se encarga de leer una cadena y validar que sea igual a uno de los enum correspondientes a Material<br>
      * Precondciones: ninguna</br>
      * Postcondiciones: nos devuelve un valor que vale para un enum</br>
      * entrada: ninguna</br>
-     * salida:Material material</br>
+     * salida:Material materialo</br>
      * @return
      */
     public static Material obtenerMaterial() {
@@ -91,10 +93,12 @@ private static Scanner teclado = new Scanner(System.in);
 	
     }
     /**
+     * Cabecera: public static ParteCuerpo obtenerParteCuerpo() <br>
+     * Comentario: Este metodo se encarga de leer una cadena y validar que sea igual a uno de los enum correspondientes a ParteCuerpo<br>
      * Precondciones: ninguna</br>
      * Postcondiciones: nos devuelve un valor que vale para un enum</br>
      * entrada: ninguna</br>
-     * salida:ParteCuepro parteCuerpo</br>
+     * salida:ParteCuerpo parteCuerpo</br>
      * @return
      */
     public static ParteCuerpo obtenerParteCuerpo() {
@@ -116,6 +120,8 @@ private static Scanner teclado = new Scanner(System.in);
 		return parteCuerpo;
     }
     /**
+     * Cabecera: public static Presentacion obtenerPresentacion() <br>
+     * Comentario: Este metodo se encarga de leer una cadena y validar que sea igual a uno de los enum correspondientes a Presentacion<br>
      * Precondciones: ninguna</br>
      * Postcondiciones: nos devuelve un valor que vale para un enum</br>
      * entrada: ninguna</br>
@@ -140,6 +146,18 @@ private static Scanner teclado = new Scanner(System.in);
 		}while(!datoValido);
 		return presentacion;
     }
+    
+    /**
+     * Cabecera: public static int anioValido()<br>
+     * Comentario: Este metodo se encarga de leer un anio y validarlo, el anio tiene que ser mayor que 0.<br>
+     * Precondiciones: ninguna <br>
+     * Postcondiciones: Devuelve un año valido <br>
+     * entrada: ninguna <br>
+     * salida: int anio<br>
+     * @return int anio<br>
+     * 
+     */
+    
     public static int anioValido() {
     	boolean datoNoValido=true;
     	int anio=0;
@@ -151,6 +169,17 @@ private static Scanner teclado = new Scanner(System.in);
     	}while(datoNoValido||anio<=0);
     	return anio;
     }
+    
+    /**
+     * Cabecera: public static int mesValido()<br>
+     * Comentario: Este metodo se encarga de leer un mes y validarlo, el mes tiene que estar entre 1 y 12<br>
+     * Precondiciones: ninguna <br>
+     * Postcondiciones: Devuelve un mes valido <br>
+     * entrada: ninguna <br>
+     * salida: int mes<br>
+     * @return int mes<br>
+     * 
+     */
     public static int mesValido() {
     	boolean datoNoValido=true;
     	int mes=0;
@@ -167,6 +196,16 @@ private static Scanner teclado = new Scanner(System.in);
     	}while(datoNoValido);
     	return mes;
     }
+    /**
+     * Cabecera: public static int diaValido() <br>
+     * Comentario: Este metodo se encarga de leer un dia y validarlo, el dia tiene que estar entre 1 y 31<br>
+     * Precondiciones: ninguna <br>
+     * Postcondiciones: Devuelve un dia valido <br>
+     * entrada: ninguna <br>
+     * salida: int dia<br>
+     * @return int dia<br>
+     * 
+     */
     public static int diaValido() {
     	boolean datoNoValido=true;
     	int dia=0;
@@ -184,6 +223,16 @@ private static Scanner teclado = new Scanner(System.in);
     	return dia;
     	
     }
+    
+   /**
+    * Cabecera: public static LocalDate esFechaValida()<br>
+    * Comentario: Este metodo valida que una fecha en su conjunto sea correcta, para ello primero valida cada dato por separado y luego hace una valoracion en común. <br>
+    * precondiciones: Ninguna<br>
+    * postcondiciones: Devuelve una fecha valida<br>
+    * Entrada: ninguna<br>
+    * Salida: LocalDate fecha<br>
+    * @return LocalDate fecha <br>
+    */
     public static LocalDate esFechaValida(){
         boolean esFechaNoValida = true;
         LocalDate fecha=null;

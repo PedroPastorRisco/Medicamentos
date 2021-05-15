@@ -21,6 +21,12 @@ public class Medicamento extends Producto implements Serializable {
 	
 
 
+	public Medicamento() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public Presentacion getPresentacion() {
 		return presentacion;
 	}

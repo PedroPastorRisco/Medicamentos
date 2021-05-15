@@ -10,6 +10,10 @@ public class Epi extends Producto implements Serializable {
 	
 	private ParteCuerpo parteCuerpo;
 	private Material material;
+	
+	public Epi() {
+		
+	}
 
 	public Epi(String codigoBarras, String nombre, LocalDate fechaCaducidad, double precio,ParteCuerpo parteCuerpo,Material material) {
 		super(codigoBarras, nombre, fechaCaducidad, precio);

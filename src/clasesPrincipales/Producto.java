@@ -10,6 +10,10 @@ public abstract class Producto implements Comparable <Producto>, Serializable {
 	private LocalDate fechaCaducidad;
 	private double precio;
 	
+	public Producto() {
+		
+	}
+	
 	public Producto(String codigoBarras,String nombre,LocalDate fechaCaducidad,double precio) {
 		this.codigoBarras=codigoBarras;
 		this.nombre=nombre;
