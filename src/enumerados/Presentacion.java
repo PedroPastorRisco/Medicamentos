@@ -1,8 +1,7 @@
 package enumerados;
 
-import java.io.Serializable;
 
-public enum Presentacion implements Serializable { COMPRIMIDO('C'),GOTAS('G'),SUSPENSION('S');
+public enum Presentacion{ COMPRIMIDO('C'),GOTAS('G'),SUSPENSION('S');
 	
 	private char abreviatura;
 	

@@ -1,11 +1,10 @@
 package clasesPrincipales;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import enumerados.Presentacion;
 
-public class Medicamento extends Producto implements Serializable {
+public class Medicamento extends Producto {
 	
 	private Presentacion presentacion;
 	private String principioActivo;

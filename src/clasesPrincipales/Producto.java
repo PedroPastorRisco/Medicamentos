@@ -62,7 +62,7 @@ public abstract class Producto implements Comparable <Producto>, Serializable {
 			iguales=true;
 		}else { 
 			if(p != null && p instanceof Producto) {
-				if(p.getCodigoBarras()==getCodigoBarras()) {
+				if(p.getCodigoBarras().equals(getCodigoBarras())) {
 					iguales=true;
 				}
 			}

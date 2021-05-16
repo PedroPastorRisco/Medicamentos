@@ -15,6 +15,7 @@ import enumerados.Presentacion;
 
 public class Validacion {
 private static Scanner teclado = new Scanner(System.in);
+private static Scanner tecladoInt=new Scanner(System.in);
 	
 	/**
 	 * Cabecera: public static String leerCodigo()<br>
@@ -64,6 +65,38 @@ private static Scanner teclado = new Scanner(System.in);
 		System.out.println("Ingrese el nombre");
 		nombre=teclado.next();
     	return nombre;
+	}
+	public static double leerPrecio() {
+		double precio;
+		boolean precioValido=false;
+		do {
+			System.out.println("Ingrese el precio");
+			precio=tecladoInt.nextDouble();
+			if(precio>0) {
+				precioValido=true;
+			}
+		}while(!precioValido);
+		return precio;
+	}
+	/**
+	 * Cabecera: public static String leerPrincipioActivo()<br>
+	 * <br>
+	 * Comentario: Este metodo se encarga de leer una cadena, que sera el nombre de un producto<br>
+	 * <br>
+	 * Precondiciones: Ninguna<br>
+	 * <br>
+	 * Entrada: Ninguna<br>
+	 * <br>
+	 * Salida: String(cadena)<br>
+	 * <br>
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devulve un tipo de dato, en este caso una cadena.<br>
+	 *  <br>principioActivo<br>
+     */
+	public static String leerPrincipioActivo() {
+		String principioActivo;
+		System.out.println("Ingrese el principio activo");
+		principioActivo=teclado.next();
+    	return principioActivo;
 	}
 	/**
      * Cabecera: public static Material obtenerMaterial() <br>
@@ -164,7 +197,7 @@ private static Scanner teclado = new Scanner(System.in);
     	int anio=0;
     	do {
     		System.out.println("Introduzca un anio");
-            anio=teclado.nextInt();
+            anio=tecladoInt.nextInt();
             YEAR.checkValidValue(anio);
             datoNoValido=false;
     	}while(datoNoValido||anio<=0);
@@ -187,7 +220,7 @@ private static Scanner teclado = new Scanner(System.in);
     	do {
     		try {
     			System.out.println("Introduzca un mes");
-            	mes=teclado.nextInt();
+            	mes=tecladoInt.nextInt();
             	MONTH_OF_YEAR.checkValidValue(mes);
             	datoNoValido=false;
     		}catch(DateTimeException e) {
@@ -212,7 +245,7 @@ private static Scanner teclado = new Scanner(System.in);
     	do {
     		try {
     			System.out.println("Introduzca un dia");
-            	dia=teclado.nextInt();
+            	dia=tecladoInt.nextInt();
             	DAY_OF_MONTH.checkValidValue(dia);
             	datoNoValido=false;
     		}catch(DateTimeException e) {

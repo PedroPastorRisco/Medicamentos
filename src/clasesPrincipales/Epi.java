@@ -1,12 +1,11 @@
 package clasesPrincipales;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import enumerados.Material;
 import enumerados.ParteCuerpo;
 
-public class Epi extends Producto implements Serializable {
+public class Epi extends Producto {
 	
 	private ParteCuerpo parteCuerpo;
 	private Material material;

@@ -32,7 +32,7 @@ public class FileAccess {
 		File ficheroAux=new File(NOMBRE_AUX);
 		boolean creado=false;
 		try {
-			if(fichero.createNewFile()&&ficheroAux.createNewFile()) {
+			if(ficheroAux.createNewFile()&&fichero.createNewFile()) {
 				creado=true;
 			}
 		} catch (IOException e) {
@@ -204,6 +204,41 @@ public class FileAccess {
 		
 	}
 	
-	
-		
+	public static boolean modificarProducto(Producto producto) {
+		ObjectInputStream ficheroEntrada=null;
+		Producto p=null;
+		boolean productoEncontrado=false;
+		try {
+			 ficheroEntrada = new ObjectInputStream(new FileInputStream(NOMBRE_FICHERO));
+	         while (!productoEncontrado) {
+	        	 try {
+	        		 p=(Producto) ficheroEntrada.readObject();
+	        		 if(p.equals(producto)) {
+	        			 p=producto;
+	        		 }
+	        		 escribirFicheroBinario(p,NOMBRE_AUX);
+	        	 }catch(EOFException exc) {
+	        		productoEncontrado=true;
+	        	 }
+	         }
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(null != ficheroEntrada) {
+					ficheroEntrada.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return productoEncontrado;
+	}
+	public static void cambioFichero() {
+		File fichero=new File(NOMBRE_FICHERO);
+		File ficheroAux=new File(NOMBRE_AUX);	
+		File ficheroMaster=fichero;
+		fichero.delete();
+		ficheroAux.renameTo(ficheroMaster);
+		}
 }

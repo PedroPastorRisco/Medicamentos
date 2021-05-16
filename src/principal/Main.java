@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import clasesPrincipales.Medicamento;
 import enumerados.Presentacion;
 import gestion.FileAccess;
+import gestion.Gestora;
 import mensaje.Mensaje;
 import validaciones.Validacion;
 
@@ -34,13 +35,17 @@ public class Main {
 		System.out.println("--Elimino las gotas y vuelvo a mostrar el fichero");
 		System.out.println();
 		FileAccess.eliminarProducto("1234dfwfqgqgq23rtgfd");
-		Mensaje.leerArrayObjeto(FileAccess.leerFichero(FileAccess.NOMBRE_AUX));
+		FileAccess.cambioFichero();
+		Mensaje.leerArrayObjeto(FileAccess.leerFichero(FileAccess.NOMBRE_FICHERO));
+		System.out.println();
+		Mensaje.mostrarResultado(FileAccess.crearFicheros());
+		System.out.println();
+		System.out.println("--Modifico el ibuprofeno cambiandole el precio");
+		System.out.println();
+		FileAccess.modificarProducto(Gestora.crearMedicamento());
+		FileAccess.cambioFichero();
+		Mensaje.leerArrayObjeto(FileAccess.leerFichero(FileAccess.NOMBRE_FICHERO));
 		
-		Validacion.esFechaValida();
-		
-		
-		
-
 	}
 
 }
