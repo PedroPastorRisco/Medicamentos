@@ -5,17 +5,27 @@ import java.time.LocalDate;
 import clasesPrincipales.Medicamento;
 import enumerados.Presentacion;
 import gestion.FileAccess;
+import gestion.FileAccessTexto;
 import gestion.Gestora;
 import mensaje.Mensaje;
-import validaciones.Validacion;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Mensaje.mostrarResultado(FileAccess.crearFicheros());
+		Mensaje.mostrarResultado(FileAccessTexto.crearFicheros());
 		Medicamento ibuprofeno600=new Medicamento("1234567890qwertyuiop", "Ibuprofeno", LocalDate.parse("2018-12-27"), 10,Presentacion.COMPRIMIDO, "Ibuprofeno");
+		FileAccessTexto.escribirObjeto(ibuprofeno600, FileAccessTexto.NOMBRE_FICHERO);
 		Medicamento paracetamol=new Medicamento("7689009876hjklñgfdsa", "Paracetamol", LocalDate.parse("2018-12-26"), 10,Presentacion.COMPRIMIDO, "Paracetamol");
+		FileAccessTexto.escribirObjeto(paracetamol, FileAccessTexto.NOMBRE_FICHERO);
+		FileAccessTexto.leerFichero(FileAccessTexto.NOMBRE_FICHERO);
+		System.out.println();
+		System.out.println("--Leemos fichero despues de eliminar paracetamol");
+		System.out.println();
+		FileAccessTexto.eliminarProducto("7689009876hjklñgfdsa", FileAccessTexto.NOMBRE_FICHERO);
+		FileAccessTexto.cambioFichero();
+		FileAccessTexto.leerFichero(FileAccessTexto.NOMBRE_FICHERO);
+		/*
 		Medicamento gotas=new Medicamento("1234dfwfqgqgq23rtgfd", "Gotas", LocalDate.parse("2018-12-24"), 10,Presentacion.GOTAS, "Gotas");
 		Medicamento bucola=new Medicamento("768aw224dfwf11223456", "bucola", LocalDate.parse("2018-12-10"), 10,Presentacion.SUSPENSION, "Bucal");
 		System.out.println();
@@ -45,7 +55,7 @@ public class Main {
 		FileAccess.modificarProducto(Gestora.crearMedicamento());
 		FileAccess.cambioFichero();
 		Mensaje.leerArrayObjeto(FileAccess.leerFichero(FileAccess.NOMBRE_FICHERO));
-		
+		*/
 	}
 
 }

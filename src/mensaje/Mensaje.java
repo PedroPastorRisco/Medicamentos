@@ -30,5 +30,8 @@ public class Mensaje {
 			System.out.println("Ups, algo ha dado error. Contacte con Raúl");
 		}
 	}
+	public static void mostrarString(String cadena) {
+		System.out.println(cadena);
+	}
 
 }

@@ -14,8 +14,8 @@ import clasesPrincipales.Producto;
 
 public class FileAccess {
 	
-	public static final String NOMBRE_FICHERO="Antipandemia.txt";
-	public static final String NOMBRE_AUX="AntipandemiaAux.txt";
+	public static final String NOMBRE_FICHERO="Antipandemia.dat";
+	public static final String NOMBRE_AUX="AntipandemiaAux.dat";
 	
 	
 	/**
@@ -203,7 +203,7 @@ public class FileAccess {
 		}
 		
 	}
-	
+
 	public static boolean modificarProducto(Producto producto) {
 		ObjectInputStream ficheroEntrada=null;
 		Producto p=null;

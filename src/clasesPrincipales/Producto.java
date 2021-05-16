@@ -73,8 +73,8 @@ public abstract class Producto implements Comparable <Producto>, Serializable {
 
 	@Override
 	public String toString() {
-		return "[codigoBarras=" + codigoBarras + ", nombre=" + nombre + ", fechaCaducidad=" + fechaCaducidad
-				+ ", precio=" + precio + ", ";
+		return getClass().getSimpleName()+","+codigoBarras+"," + nombre + "," + fechaCaducidad
+				+ "," + precio + ",";
 	}
 	
 }

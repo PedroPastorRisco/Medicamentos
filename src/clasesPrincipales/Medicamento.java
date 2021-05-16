@@ -40,7 +40,7 @@ public class Medicamento extends Producto {
 
 	@Override
 	public String toString() {
-		return "Medicamento"+super.toString()+"presentacion=" + presentacion + ", principioActivo=" + principioActivo + "]";
+		return super.toString()+ presentacion + "," + principioActivo;
 	}
 	
 
