@@ -204,7 +204,15 @@ public class FileAccess {
 		
 	}
 
-	public static boolean modificarProducto(Producto producto) {
+	/**Cabecera: public static void modificarProducto(Producto producto) <br>
+	 * Descripcion: Este metodo recibe un producto modificado y busca el producto correspondiente desactualizado una vez lo encuentra lo iguala al actualizado <br>
+	 * Precondiciones: Que el producto introducido se encuentre ya en el fichero de texto <br>
+	 * Postcondiciones: Escribe en el fichero de texto auxiliar el producto con los cambios <br>
+	 * Entrada: Producto producto <br>
+	 * Salida: ninguna <br>
+	 * @param producto <br>
+	 */
+	public static void modificarProducto(Producto producto) {
 		ObjectInputStream ficheroEntrada=null;
 		Producto p=null;
 		boolean productoEncontrado=false;
@@ -232,8 +240,15 @@ public class FileAccess {
 				e.printStackTrace();
 			}
 		}
-		return productoEncontrado;
 	}
+	/**
+	 * Cabecera: public static void cambioFichero() <br>
+	 * Descripcion: Este metodo esta hecho para hacer que el fichero auxiliar con los datos actualizados pase a ser el fichero principal, renambrodolo y borrando el auxiliar <br>
+	 * Precondiciones: Ambos ficheros deben de estar creados  <br>
+	 * Postcondciones: Hara que el fichero auxiliar pase a ser el fichero normal <br>
+	 * Entrada: Ninguna <br>
+	 * Salida: Ninguna <br>
+	 */
 	public static void cambioFichero() {
 		File fichero=new File(NOMBRE_FICHERO);
 		File ficheroAux=new File(NOMBRE_AUX);	
