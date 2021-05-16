@@ -6,6 +6,7 @@ import static java.time.temporal.ChronoField.YEAR;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import enumerados.Material;
@@ -150,7 +151,7 @@ private static Scanner teclado = new Scanner(System.in);
     /**
      * Cabecera: public static int anioValido()<br>
      * Comentario: Este metodo se encarga de leer un anio y validarlo, el anio tiene que ser mayor que 0.<br>
-     * Precondiciones: ninguna <br>
+     * Precondiciones: No introducir un valor que no sea un int <br>
      * Postcondiciones: Devuelve un año valido <br>
      * entrada: ninguna <br>
      * salida: int anio<br>
@@ -163,9 +164,9 @@ private static Scanner teclado = new Scanner(System.in);
     	int anio=0;
     	do {
     		System.out.println("Introduzca un anio");
-        	anio=teclado.nextInt();
-        	YEAR.checkValidValue(anio);
-        	datoNoValido=false;
+            anio=teclado.nextInt();
+            YEAR.checkValidValue(anio);
+            datoNoValido=false;
     	}while(datoNoValido||anio<=0);
     	return anio;
     }
@@ -173,7 +174,7 @@ private static Scanner teclado = new Scanner(System.in);
     /**
      * Cabecera: public static int mesValido()<br>
      * Comentario: Este metodo se encarga de leer un mes y validarlo, el mes tiene que estar entre 1 y 12<br>
-     * Precondiciones: ninguna <br>
+     * Precondiciones: No introducir un valor que no sea un int  <br>
      * Postcondiciones: Devuelve un mes valido <br>
      * entrada: ninguna <br>
      * salida: int mes<br>
@@ -192,14 +193,13 @@ private static Scanner teclado = new Scanner(System.in);
     		}catch(DateTimeException e) {
     			System.out.println("Mes no valido");
     		}
-    		
     	}while(datoNoValido);
     	return mes;
     }
     /**
      * Cabecera: public static int diaValido() <br>
      * Comentario: Este metodo se encarga de leer un dia y validarlo, el dia tiene que estar entre 1 y 31<br>
-     * Precondiciones: ninguna <br>
+     * Precondiciones: No introducir un valor que no sea un int <br>
      * Postcondiciones: Devuelve un dia valido <br>
      * entrada: ninguna <br>
      * salida: int dia<br>
@@ -218,7 +218,6 @@ private static Scanner teclado = new Scanner(System.in);
     		}catch(DateTimeException e) {
     			System.out.println("dia no valido");
     		}
-    		
     	}while(datoNoValido);
     	return dia;
     	
